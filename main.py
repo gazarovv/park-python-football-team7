@@ -85,8 +85,7 @@ num_to_team[4] = Team(4, 'cska')
 num_to_team[5] = Team(5, 'anji')
 num_to_team[6] = Team(6, 'sovety')
 number_of_team = len(num_to_team)
-number_of_game = (number_of_team * (number_of_team - 1)) / 2
-
+number_of_game = (number_of_team * (number_of_team - 1)) / 2 - 1
 k = 1
 make_table(num_to_team, game)
 while k == 1:
