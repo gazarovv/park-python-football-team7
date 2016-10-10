@@ -76,7 +76,7 @@ def find_game(t1,t2,scoree, b):
         b = 1
 
 
-gama = dict()
+game = dict()
 num_to_team = dict()
 num_to_team[1] = Team(1, 'spartak')
 num_to_team[2] = Team(2, 'loko')
@@ -84,8 +84,11 @@ num_to_team[3] = Team(3, 'dinamo')
 num_to_team[4] = Team(4, 'cska')
 num_to_team[5] = Team(5, 'anji')
 num_to_team[6] = Team(6, 'sovety')
+number_of_team = len(num_to_team)
+number_of_game = (number_of_team * (number_of_team - 1)) / 2
+
 k = 1
-make_table(num_to_team, gama)
+make_table(num_to_team, game)
 while k == 1:
     command = input('Input command or "help": ')
 
@@ -96,23 +99,23 @@ while k == 1:
     if command == 'exit':
         break
     if command == 'help':
-        print('commands: out, search, igra, help, exit')
+        print('commands: out, search, game, help, exit')
     if command == 'search':
         cmd = input('Print name of team:  ')
         i = 1
         b = 0
-        while i <= 6:
+        while i <= number_of_team:
             find_team(cmd, num_to_team[i], b)
             i += 1
             if b == 1:
                 break
-    if command == 'igra':
+    if command == 'game':
         first = input('Print first team:  ')
         second = input('Print second team:  ')
         i = 0
         b = 0
-        while i <= 14:
-            find_game(first, second, gama[i], b)
+        while i <= number_of_game:
+            find_game(first, second, game[i], b)
             i += 1
             if b == 1:
                 break
